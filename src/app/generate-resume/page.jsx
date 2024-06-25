@@ -583,7 +583,7 @@ export default function Component() {
                           <div className="flex items-center gap-5">
                             <Label htmlFor="templates">Templates</Label>
                           </div>
-                          <Dialog>
+                          {/* <Dialog>
                             <DialogTrigger asChild>
                               <Button size={"sm"} variant="outline">
                                 Select
@@ -683,6 +683,22 @@ export default function Component() {
                                   Cancel
                                 </Button>
                               </DialogFooter>
+                            </DialogContent>
+                          </Dialog> */}
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <Button size={"sm"} variant="outline">
+                                Select
+                              </Button>
+                            </DialogTrigger>
+                            <DialogContent>
+                              <DialogHeader>
+                                <DialogTitle>Coming soon 🚀</DialogTitle>
+                                <DialogDescription>
+                                  We are creating new templates for you. Stay
+                                  tuned!
+                                </DialogDescription>
+                              </DialogHeader>
                             </DialogContent>
                           </Dialog>
                         </CardContent>
@@ -977,103 +993,17 @@ export default function Component() {
                           <Dialog>
                             <DialogTrigger asChild>
                               <Button size={"sm"} variant="outline">
-                                select
+                                Select
                               </Button>
                             </DialogTrigger>
-                            <DialogContent className="sm:max-w-[600px]">
+                            <DialogContent>
                               <DialogHeader>
-                                <DialogTitle>Select a Template</DialogTitle>
+                                <DialogTitle>Coming soon 🚀</DialogTitle>
                                 <DialogDescription>
-                                  Choose from one of our pre-designed templates
-                                  to get started.
+                                  We are creating new templates for you. Stay
+                                  tuned!
                                 </DialogDescription>
                               </DialogHeader>
-                              <div className="grid sm:grid-cols-3 gap-6 py-6">
-                                <Card
-                                  onClick={() => setSelectedOption("option1")}
-                                  className={`cursor-pointer transition-all ${
-                                    selectedOption === "option1"
-                                      ? "ring-2 ring-primary"
-                                      : "hover:scale-105"
-                                  }`}
-                                >
-                                  <Image
-                                    src="/placeholder.svg"
-                                    alt="Template 1"
-                                    width={300}
-                                    height={200}
-                                    className="rounded-t-lg object-cover"
-                                  />
-                                  <CardContent>
-                                    <CardTitle>Template 1</CardTitle>
-                                    <CardDescription>
-                                      A simple and clean template to get you
-                                      started.
-                                    </CardDescription>
-                                  </CardContent>
-                                </Card>
-                                <Card
-                                  onClick={() => setSelectedOption("option2")}
-                                  className={`cursor-pointer transition-all ${
-                                    selectedOption === "option2"
-                                      ? "ring-2 ring-primary"
-                                      : "hover:scale-105"
-                                  }`}
-                                >
-                                  <Image
-                                    src="/placeholder.svg"
-                                    alt="Template 2"
-                                    width={300}
-                                    height={200}
-                                    className="rounded-t-lg object-cover"
-                                  />
-                                  <CardContent>
-                                    <CardTitle>Template 2</CardTitle>
-                                    <CardDescription>
-                                      A more visually appealing template with a
-                                      modern design.
-                                    </CardDescription>
-                                  </CardContent>
-                                </Card>
-                                <Card
-                                  onClick={() => setSelectedOption("option3")}
-                                  className={`cursor-pointer transition-all ${
-                                    selectedOption === "option3"
-                                      ? "ring-2 ring-primary"
-                                      : "hover:scale-105"
-                                  }`}
-                                >
-                                  <Image
-                                    src="/placeholder.svg"
-                                    alt="Template 3"
-                                    width={300}
-                                    height={200}
-                                    className="rounded-t-lg object-cover"
-                                  />
-                                  <CardContent>
-                                    <CardTitle>Template 3</CardTitle>
-                                    <CardDescription>
-                                      A feature-rich template with advanced
-                                      functionality.
-                                    </CardDescription>
-                                  </CardContent>
-                                </Card>
-                              </div>
-                              <DialogFooter>
-                                {selectedOption && (
-                                  <Button
-                                    onClick={() => setSelectedOption(null)}
-                                  >
-                                    Select {selectedOption}
-                                  </Button>
-                                )}
-                                <Button
-                                  variant="outline"
-                                  onClick={() => setSelectedOption(null)}
-                                >
-                                  Cancel
-                                </Button>
-                              </DialogFooter>
                             </DialogContent>
                           </Dialog>
                         </CardContent>

@@ -18,6 +18,7 @@ import nginx from "../../public/static/images/nginx.png";
 import react from "../../public/static/images/react.svg";
 import ubuntu from "../../public/static/images/ubuntu.png";
 import vercel from "../../public/static/images/vercel.svg";
+import peerlistBanner from "../../public/static/images/peerlist/banner.png";
 
 export default function Hero() {
   const router = useRouter();
@@ -140,6 +141,28 @@ export default function Hero() {
         </div>
       </div>
       {/* End Video Section */}
+
+      {/* Clients Section */}
+      <div className="container py-16 lg:py-32 pb-10 px-4 md:px-8">
+        <div className="mt-6 md:mt-12 py-3 flex items-center text-muted-foreground text-sm gap-x-1.5 after:flex-[1_1_0%] after:border-t after:ms-6 after:border-t-muted-foreground/50">
+          <span className="font-semibold bg-clip-text bg-gradient-to-l from-blue-600 to-violet-500 text-transparent dark:from-blue-400 dark:to-violet-400">
+            Achievements we have
+          </span>
+          at LumosCareer🪄
+        </div>
+        <br />
+        {/* Clients */}
+        <div className="flex flex-wrap gap-x-6 gap-y-4 sm:gap-x-12 lg:gap-x-4 justify-center">
+          <div className="flex justify-center">
+            <Image
+              src={peerlistBanner}
+              // height={300}
+              alt="Picture of the author"
+              className="mb-4 sm:mb-0"
+            />
+          </div>
+        </div>
+      </div>
 
       {/* Clients Section */}
       <div className="container py-16 lg:py-32 pb-10 px-4 md:px-8">

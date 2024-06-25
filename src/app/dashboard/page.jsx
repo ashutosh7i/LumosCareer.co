@@ -99,7 +99,7 @@ export default function Component() {
               <DialogTrigger asChild>
                 <Button>➕ new</Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-lg p-4">
+              <DialogContent className="sm:max-w-lg">
                 <DialogHeader>
                   <DialogTitle>Create an Item</DialogTitle>
                   <DialogDescription>
@@ -108,8 +108,8 @@ export default function Component() {
                     <code>fullstack-dev-google</code>
                   </DialogDescription>
                 </DialogHeader>
-                <form onSubmit={handleSubmit} className="grid gap-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+                <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+                  <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="name" className="text-right">
                       Name
                     </Label>
@@ -117,11 +117,11 @@ export default function Component() {
                       id="name"
                       type="text"
                       onChange={(e) => setJobName(e.target.value)}
-                      placeholder="e.g., swe-at-google"
                       className="col-span-3"
+                      placeholder="e.g., swe-at-google"
                     />
                   </div>
-                  <DialogFooter className="flex justify-end mt-4">
+                  <DialogFooter>
                     <Button type="submit">Create</Button>
                   </DialogFooter>
                 </form>
@@ -131,61 +131,71 @@ export default function Component() {
         </header>
         {/* // mobile view */}
         <div className="px-4 md:px-6">
-          <div className="grid grid-cols-1 gap-4 md:hidden">
-            {documents.map((doc, index) => (
-              <Card key={index}>
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-medium">{doc.$id}</h3>
-                  <div className="flex justify-between items-center mt-2">
-                    <p className="text-sm text-muted-foreground">
-                      {doc.$tenant}
-                    </p>
-                    <Button
-                      variant={"outline"}
-                      onClick={() => handleOpen(doc.$id)}
-                    >
-                      Open
-                    </Button>
-                  </div>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    {new Date(doc.$updatedAt).toLocaleDateString()}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="hidden md:block lg:block px-6 border ">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Title</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead>Date</TableHead>
-                  <TableHead>Action</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
+          {documents.length === 0 ? (
+            <div className="text-center">
+              <h2 className="text-2xl font-bold mb-4">Welcome new user!</h2>
+              <p>{'Click on "➕ new" to start.👆'}</p>
+            </div>
+          ) : (
+            <>
+              <div className="grid grid-cols-1 gap-4 md:hidden">
                 {documents.map((doc, index) => (
-                  <TableRow key={index}>
-                    <TableCell>{doc.$id}</TableCell>
-                    <TableCell> {doc.$tenant}</TableCell>
-                    <TableCell>
-                      {new Date(doc.$updatedAt).toLocaleDateString()}
-                    </TableCell>
-                    <TableCell>
-                      <Button
-                        variant={"secondary"}
-                        onClick={() => handleOpen(doc.$id)}
-                      >
-                        Open
-                      </Button>
-                    </TableCell>
-                  </TableRow>
+                  <Card key={index}>
+                    <CardContent className="p-4">
+                      <h3 className="text-lg font-medium">{doc.$id}</h3>
+                      <div className="flex justify-between items-center mt-2">
+                        <p className="text-sm text-muted-foreground">
+                          {doc.$tenant}
+                        </p>
+                        <Button
+                          variant={"outline"}
+                          onClick={() => handleOpen(doc.$id)}
+                        >
+                          Open
+                        </Button>
+                      </div>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        {new Date(doc.$updatedAt).toLocaleDateString()}
+                      </p>
+                    </CardContent>
+                  </Card>
                 ))}
-              </TableBody>
-            </Table>
-          </div>
+              </div>
+
+              {/* // desktop view */}
+              <div className="hidden md:block lg:block px-6 border ">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Title</TableHead>
+                      <TableHead>Status</TableHead>
+                      <TableHead>Date</TableHead>
+                      <TableHead>Action</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {documents.map((doc, index) => (
+                      <TableRow key={index}>
+                        <TableCell>{doc.$id}</TableCell>
+                        <TableCell> {doc.$tenant}</TableCell>
+                        <TableCell>
+                          {new Date(doc.$updatedAt).toLocaleDateString()}
+                        </TableCell>
+                        <TableCell>
+                          <Button
+                            variant={"secondary"}
+                            onClick={() => handleOpen(doc.$id)}
+                          >
+                            Open
+                          </Button>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </ProtectedRoute>

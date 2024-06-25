@@ -535,10 +535,10 @@ export default function Component() {
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[425px]">
                     <DialogHeader>
-                      <DialogTitle></DialogTitle>
+                      <DialogTitle>🪄</DialogTitle>
                       <DialogDescription></DialogDescription>
                     </DialogHeader>
-                    <div className="grid gap-4 py-4 font-extrabold text-lg text-gray-800">
+                    <div className="grid gap-4 py-4 font-extrabold text-lg">
                       {"Heyo! You're all set to grab your next opportunity."}
                       <br />
                       {" We wish you all the best! 🪄"}
