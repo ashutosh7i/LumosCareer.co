@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 
 function Page() {
   return (
-    <div className="container py-16 lg:py-32 px-4 md:px-8">
+    <div className="container py-16 lg:py-16 max-w-3xl mx-auto">
       <p className="mb-8 border-l-2 pl-6 text-center italic">
         "the more you can personalize your job application, the more you'll
         stand out from the crowd. it shows you're not just looking for a job,
