@@ -1,10 +1,9 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/AuthContext";
 import Link from "next/link";
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -21,9 +20,21 @@ import { useToast } from "@/components/ui/use-toast";
 export default function LoginForm() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const { login } = useAuth();
+  const { login, user } = useAuth();
   const router = useRouter();
   const { toast } = useToast();
+
+  // Inside your component
+  useEffect(() => {
+    if (user) {
+      toast({
+        title: "Logged in🔐",
+        description: "You are already Logged in🔐 ",
+      });
+
+      router.push("/dashboard");
+    }
+  }, [user, router, toast]); // Dependency array, effect runs only when `user` changes
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
