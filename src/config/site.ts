@@ -35,7 +35,7 @@ export const siteConfig = {
   links: {
     home: "/",
     ourStory: "/our-story",
-    spotlight: "/spotlight",
+    spotlight: "https://peerlist.io/vinayakgavariya/project/lumoscareer",
     github: "https://github.com/ashutosh7i/LumosCareer.co",
   },
 };

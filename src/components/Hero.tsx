@@ -73,8 +73,8 @@ const Cards = [
     bg_color: "bg-orange-500",
   },
   {
-    title: "Generation",
-    description: "We generate a new resume, cover-letter & cold-email for you",
+    title: "Generate",
+    description: "We generate a new resume, cover letter & cold email for you",
     icon: <Hammer size={50} />,
     bg_color: "bg-green-500",
   },
