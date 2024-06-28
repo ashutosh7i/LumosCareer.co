@@ -11,6 +11,7 @@ import Image from "next/image";
 import logo from "../../public/static/images/logo.png";
 import { useAuth } from "@/lib/AuthContext";
 import PeerlistMedal from "../../public/static/images/peerlist/medal.svg";
+import { siteConfig } from "@/config/site";
 
 const Navbar = () => {
   const { isLoggedIn, user, logout } = useAuth();
@@ -36,7 +37,18 @@ const Navbar = () => {
           <span className="sr-only">lumos career</span>
         </div>
         <nav className="hidden items-center gap-6 md:flex">
-          <Link
+          {siteConfig.navItems.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+              prefetch={false}
+            >
+              {item.label}
+            </Link>
+          ))}
+
+          {/* <Link
             href="/"
             className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
             prefetch={false}
@@ -56,7 +68,7 @@ const Navbar = () => {
             prefetch={false}
           >
             Contact
-          </Link>
+          </Link> */}
           {isLoggedIn ? (
             <>
               <Button onClick={logout}>Logout</Button>
@@ -81,31 +93,18 @@ const Navbar = () => {
           </SheetTrigger>
           <SheetContent side="right">
             <div className="grid gap-4 p-4">
-              <Link
-                href="/"
-                className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-                prefetch={false}
-              >
-                Home
-              </Link>
-              <Link
-                href="https://github.com/ashutosh7i/lumos-carrier"
-                className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-                prefetch={false}
-              >
-                About
-              </Link>
-              <Link
-                href="https://github.com/ashutosh7i/lumos-carrier"
-                className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-                prefetch={false}
-              >
-                Contact
-              </Link>
+              {siteConfig.navItems.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                  prefetch={false}
+                >
+                  {item.label}
+                </Link>
+              ))}
               {isLoggedIn ? (
-                <Button variant="outline" onClick={logout}>
-                  Logout
-                </Button>
+                <Button onClick={logout}>Logout</Button>
               ) : (
                 <Link
                   href="/login"
