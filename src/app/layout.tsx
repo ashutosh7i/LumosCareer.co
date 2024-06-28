@@ -4,7 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/lib/ThemeProvider";
 import { AuthProvider } from "@/lib/AuthContext";
-
+import { Analytics } from '@vercel/analytics/react';
+ 
 import { Toaster } from "@/components/ui/toaster";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -65,6 +66,7 @@ export default function RootLayout({
             <Navbar />
             {children}
             <Toaster />
+            <Analytics/>
             <Footer />
           </ThemeProvider>
         </AuthProvider>
