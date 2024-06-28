@@ -25,7 +25,7 @@ export const siteConfig = {
     },
     {
       name: "priyanshi",
-      github: "https://github.com/vinayakgavariya",
+      github: "https://github.com/priya-jan",
     },
     {
       name: "aashutosh",
