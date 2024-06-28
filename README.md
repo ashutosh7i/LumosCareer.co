@@ -46,9 +46,9 @@ _LumosCareer_ is an innovative web application designed to assist job seekers in
 
 ![peerlist badge](./public/static/images/peerlist/banner.png)
 
-> This project was created during the [Peerlist x roadmap.sh AI Hackathon 2024](https://peerlist.io/vinayakgavariya/project/lumoscareer), where we won the <i>"Best Presentation"</i> track.
+> This project was created during the [Peerlist x roadmap.sh AI Hackathon 2024](https://peerlist.io/hackathons/peerlist-roadmap-hackathon), where we won the <i>"Best Presentation"</i> track.
 
-> Additionally, lumoscareer was one of the <i>Top 3 projects of Week 25</i> in 2024 for [Project Spotlight Series](https://peerlist.io/projects/2024/week/25) by Peerlist.
+> Additionally, lumoscareer was one of the <i>Top 3 projects of Week 25</i> in 2024 for [Project Spotlight Series](https://peerlist.io/vinayakgavariya/project/lumoscareer) by Peerlist.
 
 ## Vision
 

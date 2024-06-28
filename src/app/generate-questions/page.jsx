@@ -130,7 +130,7 @@ export default function Component() {
     }
   };
 
-  const generateCoverLetter = async (e) => {
+  const generateInterviewGuide = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     //setting all data to be sent in state as json
@@ -477,8 +477,8 @@ export default function Component() {
                 </div>
               </div>
               <CardFooter className="sticky bottom-0 bg-white dark:bg-gray-950 py-4 flex justify-center">
-                <Button type="submit" onClick={generateCoverLetter}>
-                  Generate cover letter🪄✨
+                <Button type="submit" onClick={generateInterviewGuide}>
+                  Generate interview guide🪄✨
                 </Button>
               </CardFooter>
             </Card>
@@ -501,7 +501,7 @@ export default function Component() {
                   <div className="flex items-center">
                     <div className="grid w-full max-w-sm items-center gap-1.5">
                       <Label htmlFor="picture">do you like it?</Label>
-                      <Button size={"sm"} onClick={generateCoverLetter}>
+                      <Button size={"sm"} onClick={generateInterviewGuide}>
                         Generate again 🔂
                       </Button>
                     </div>
@@ -553,7 +553,7 @@ export default function Component() {
                     </div>
                     <Button
                       onClick={() => {
-                        window.location.href = "https://ctt.ac/9E03F";
+                        window.open("https://ctt.ac/9E03F", "_blank");
                       }}
                     >
                       <Twitter /> {"Spread the word✨"}
