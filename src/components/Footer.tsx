@@ -74,7 +74,7 @@ export default function Footer() {
                     href={siteConfig.links.spotlight}
                     className="hover:underline"
                   >
-                    Spotlight
+                    Peerlist Spotlight
                   </a>
                 </li>
                 <li>

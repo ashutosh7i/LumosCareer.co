@@ -25,7 +25,7 @@ function Page() {
         them get their next opportunity without any hassle.
       </p>
       <blockquote className="mt-6 border-l-2 pl-6 italic">
-        we just want to "🪄lumos" their career with this small initiative.
+        we just want to "🪄lumos" their career with this initiative.
       </blockquote>
       <p className="leading-7 [&:not(:first-child)]:mt-6">
         and that's where lumoscareer comes in. lumoscareer is your all-in-one
