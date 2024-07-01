@@ -954,8 +954,9 @@ export default function Component() {
                   Download
                   <Download className="ml-2 h-4 w-4" />
                 </Button>
+
                 <Button type="submit">
-                  <Link href={"/generate-questions"}>Interview Prep 😉❓</Link>
+                  <Link href={"/generate-cold-email"}>Cold Email 📩📨</Link>
                 </Button>
               </CardFooter>
             </Card>
